@@ -1,25 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import useCounter from './Counter'
 
-function App() {
+export default function App() {
+  let [count, increment, decrement, reset] = useCounter();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h2>Count: {count}</h2>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+      <button onClick={reset}>Reset</button>
     </div>
   );
 }
-
-export default App;
