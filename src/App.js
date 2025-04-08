@@ -1,13 +1,21 @@
-import useCounter from './Counter'
+import { Suspense, lazy } from 'react';
+import About from './components/About';
+const MyComponent = lazy(() => import('./components/MyComponent'))
 
-export default function App() {
-  let [count, increment, decrement, reset] = useCounter();
+function App() {
   return (
-    <div>
-      <h2>Count: {count}</h2>
-      <button onClick={increment}>Increment</button>
-      <button onClick={decrement}>Decrement</button>
-      <button onClick={reset}>Reset</button>
+    <div className="App">
+      <About />
+      <Suspense fallback={
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading the data inside the component...</span>
+        </div>
+      }>
+        <MyComponent />
+      </Suspense>
+
     </div>
   );
 }
+
+export default App;
