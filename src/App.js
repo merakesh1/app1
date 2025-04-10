@@ -29,7 +29,7 @@ export default function App() {
   );
 } */
 
-import { useEffect, useState } from "react";
+/* import { useEffect, useState } from "react";
 import UserList from "./components/UserList";
 import WithLoading from "./components/withLoading";
 
@@ -51,6 +51,23 @@ export default function App() {
     <>
       <h1>See the Users below</h1>
       <EnhancedComponent users={users} isLoading={isLoading} />
+    </>
+  );
+} */
+
+import { useState } from "react";
+import Profile from "./components/Profile";
+import Authorize from "./components/Authorize";
+
+let EnhancedComponent = Authorize(Profile);
+
+export default function App() {
+  let [isAuthorized, setIsAuthorized] = useState(false);
+  return (
+    <>
+      <button onClick={() => setIsAuthorized(true)}>Login</button>
+      <button onClick={() => setIsAuthorized(false)}>Logout</button>
+      <EnhancedComponent isAuthorized={isAuthorized} username="John Doe" />
     </>
   );
 }
