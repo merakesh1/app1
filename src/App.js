@@ -1,4 +1,4 @@
-import { Suspense, lazy } from 'react';
+/* import { Suspense, lazy } from 'react';
 import About from './components/About';
 const MyComponent = lazy(() => import('./components/MyComponent'))
 
@@ -18,4 +18,39 @@ function App() {
   );
 }
 
-export default App;
+export default App; */
+
+/* import TrueCallerClone from "./components/TrueCaller";
+export default function App() {
+  return (
+    <>
+      <TrueCallerClone />
+    </>
+  );
+} */
+
+import { useEffect, useState } from "react";
+import UserList from "./components/UserList";
+import WithLoading from "./components/withLoading";
+
+let EnhancedComponent = WithLoading(UserList)
+
+export default function App() {
+  let [users, setUsers] = useState([]);
+  let [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(res => res.json())
+      .then(data => {
+        setUsers(data);
+        setIsLoading(false);
+      })
+      .catch(err => console.log(err));
+  }, []);
+  return (
+    <>
+      <h1>See the Users below</h1>
+      <EnhancedComponent users={users} isLoading={isLoading} />
+    </>
+  );
+}
