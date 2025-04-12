@@ -72,16 +72,19 @@ export default function App() {
   );
 } */
 
-import { useState } from "react";
 import A from "./components/A";
 import B from "./components/B";
+import { useContext } from "react";
+import { contextObj } from "./Contexts/CounterContext";
 export default function App() {
-  let [count, setCount] = useState(0);
+  let { increment, decrement, reset } = useContext(contextObj);
   return (
     <div style={{ border: "1px solid black", padding: "10px", backgroundColor: "bisque" }}>
       <A />
-      <B count={count} />
-      <button onClick={() => setCount(count + 1)}>Click</button>
+      <B />
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+      <button onClick={reset}>Reset</button>
     </div>
   );
 }

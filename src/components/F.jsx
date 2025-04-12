@@ -1,5 +1,5 @@
 import G from './G';
-export default function F(props) {
+export default function F() {
   return (
     <div
       style={{
@@ -9,7 +9,7 @@ export default function F(props) {
       }}
     >
       <h1>F</h1>
-      <G count={props.count} />
+      <G />
     </div>
   );
 }

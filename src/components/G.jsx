@@ -1,4 +1,7 @@
-export default function G(props) {
+import { useContext } from 'react';
+import { contextObj } from '../Contexts/CounterContext';
+export default function G() {
+  let { count } = useContext(contextObj);
   return (
     <div
       style={{
@@ -8,7 +11,7 @@ export default function G(props) {
       }}
     >
       <h1>G</h1>
-      <p>Count: {props.count}</p>
+      <p>Count: {count} </p>
     </div>
   );
 }

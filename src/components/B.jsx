@@ -1,7 +1,7 @@
 import E from './E';
 import F from './F';
 
-export default function B(props) {
+export default function B() {
   return (
     <div
       style={{
@@ -12,7 +12,7 @@ export default function B(props) {
     >
       <h1>B</h1>
       <E />
-      <F count={props.count} />
+      <F />
     </div>
   );
 }
