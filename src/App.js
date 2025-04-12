@@ -55,7 +55,7 @@ export default function App() {
   );
 } */
 
-import { useState } from "react";
+/* import { useState } from "react";
 import Profile from "./components/Profile";
 import Authorize from "./components/Authorize";
 
@@ -69,5 +69,19 @@ export default function App() {
       <button onClick={() => setIsAuthorized(false)}>Logout</button>
       <EnhancedComponent isAuthorized={isAuthorized} username="John Doe" />
     </>
+  );
+} */
+
+import { useState } from "react";
+import A from "./components/A";
+import B from "./components/B";
+export default function App() {
+  let [count, setCount] = useState(0);
+  return (
+    <div style={{ border: "1px solid black", padding: "10px", backgroundColor: "bisque" }}>
+      <A />
+      <B count={count} />
+      <button onClick={() => setCount(count + 1)}>Click</button>
+    </div>
   );
 }
