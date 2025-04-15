@@ -20,6 +20,7 @@ function App() {
 
 export default App; */
 
+
 /* import TrueCallerClone from "./components/TrueCaller";
 export default function App() {
   return (
@@ -44,8 +45,8 @@ export default function App() {
       .then(data => {
         setUsers(data);
         setIsLoading(false);
-      })
-      .catch(err => console.log(err));
+        })
+        .catch(err => console.log(err));
   }, []);
   return (
     <>
@@ -65,13 +66,13 @@ export default function App() {
   let [isAuthorized, setIsAuthorized] = useState(false);
   return (
     <>
-      <button onClick={() => setIsAuthorized(true)}>Login</button>
-      <button onClick={() => setIsAuthorized(false)}>Logout</button>
-      <EnhancedComponent isAuthorized={isAuthorized} username="John Doe" />
+    <button onClick={() => setIsAuthorized(true)}>Login</button>
+    <button onClick={() => setIsAuthorized(false)}>Logout</button>
+    <EnhancedComponent isAuthorized={isAuthorized} username="John Doe" />
     </>
   );
 } */
-
+/* 
 import A from "./components/A";
 import B from "./components/B";
 import { useContext } from "react";
@@ -86,5 +87,32 @@ export default function App() {
       <button onClick={decrement}>Decrement</button>
       <button onClick={reset}>Reset</button>
     </div>
+  );
+} */
+/* 
+import ParentComponent from "./components/ParentComponent";
+export default function App() {
+  return (
+    <>
+      <ParentComponent />
+    </>
+  )
+} */
+/* 
+import Parent from "./components/P1";
+export default function App() {
+  return (
+    <>
+      <Parent />
+    </>
+  );
+} */
+
+import P3 from "./components/P3"
+export default function App() {
+  return (
+    <>
+      <P3 />
+    </>
   );
 }
