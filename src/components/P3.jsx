@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import '../App.css';
 
 export default function P3() {
   let [count, setCount] = useState(0);
@@ -19,7 +20,7 @@ export default function P3() {
         backgroundColor: mode,
         color: mode === 'black' ? 'white' : 'black',
         padding: '10px',
-        margin: '10px',
+        margin: '2px',
         minHeight: '50vh',
         border: '1px solid black',
       }}
@@ -27,6 +28,7 @@ export default function P3() {
       <p>Count: {count}</p>
       <p>Calculated Value: {calculate}</p>
       <button onClick={() => setCount((prev) => prev + 1)}>Increment</button>
+      &nbsp;&nbsp;&nbsp;
       <button
         onClick={() =>
           setMode((prev) => (prev === 'black' ? 'white' : 'black'))
