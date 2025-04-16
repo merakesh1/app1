@@ -108,12 +108,29 @@ export default function App() {
   );
 } */
 
-import P3 from "./components/P3"
+/* import P3 from "./components/P3"
 export default function App() {
   return (
     <>
       <P3 />
     </>
   );
-}
+} */
 
+/* import reducer from "./Reducers/reducer";
+import { useReducer } from "react";
+
+export default function App() {
+  let [count, dispatch] = useReducer(reducer, 0);
+
+  return (
+    <div>
+      <h1>Welcome to my Counter App</h1>
+      <h2>Count: {count}</h2>
+      <button onClick={() => dispatch({ type: "INCREMENT" })}>Increment</button>
+      <button onClick={() => dispatch({ type: "DECREMENT" })}>Decrement</button>
+      <button onClick={() => dispatch({ type: "RESET" })}>Reset</button>
+    </div>
+  )
+}
+ */

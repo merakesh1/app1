@@ -1,5 +1,7 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useReducer } from 'react';
 import '../App.css';
+import { object } from 'framer-motion/client';
+import { type } from '@testing-library/user-event/dist/type';
 
 export default function P3() {
   let [count, setCount] = useState(0);
