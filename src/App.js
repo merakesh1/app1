@@ -134,3 +134,72 @@ export default function App() {
   )
 }
  */
+
+import reducer from "./Reducers/reducer2";
+import { useReducer, useState } from "react";
+import './App.css'
+
+export default function App() {
+  let [todos, dispatch] = useReducer(reducer, []);
+  let [text, setText] = useState('');
+
+  let handleAddTodo = () => {
+    if (text.trim() !== '') {
+      dispatch({ type: "ADD_TODO", payload: text });
+      setText('');
+    } else {
+      alert('Please enter some task to track it...');
+    }
+  };
+
+  return (
+    <div className="container-fluid min-vh-100 d-flex align-items-center justify-content-center todo-app">
+      <div className="card shadow-lg todo-card">
+        <div className="card-body p-4">
+          <h1 className="text-center mb-4 heading">My Todo App</h1>
+          <h3 className="text-center mb-4 text-secondary">Tasks: {todos.length}</h3>
+          <div className="input-group mb-4">
+            <input
+              type="text"
+              className="form-control todo-input"
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              placeholder="Add todo here..."
+            />
+            <button className="btn btn-sm btn-teal todo-add-button" onClick={handleAddTodo}>
+              Add Todo
+            </button>
+          </div>
+          <ul className="list-group todo-list">
+            {todos.map((todo) => (
+              <li
+                key={todo.id}
+                className="list-group-item d-flex justify-content-between align-items-center todo-item items"
+              >
+                <h6
+                  className={`mb-0 ${todo.completed ? 'text-decoration-line-through text-muted' : ''}`}
+                >
+                  {todo.text}
+                </h6>
+                <div>
+                  <button
+                    className="btn btn-sm btn-coral me-2 todo-remove-button"
+                    onClick={() => dispatch({ type: "REMOVE_TODO", payload: todo.id })}
+                  >
+                    Remove
+                  </button>
+                  <button
+                    className="btn btn-sm btn-teal todo-toggle-button"
+                    onClick={() => dispatch({ type: "TOGGLE_TODO", payload: todo.id })}
+                  >
+                    {todo.completed ? 'Incomplete' : 'Complete'}
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}

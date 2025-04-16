@@ -54,7 +54,7 @@ button {
 }
  */
 
-body {
+/* body {
   font-family: Arial, sans-serif;
   background-color: #448a97;
   display: flex;
@@ -122,4 +122,28 @@ button {
 
 button:hover {
   background-color: rgb(197, 130, 182);
+} */
+
+.todo-add-button:hover {
+  background-color: rgb(181, 139, 172);
+}
+
+.todo-toggle-button:hover {
+  background-color: rgb(146, 190, 151);
+}
+
+.todo-remove-button:hover {
+  background-color: rgb(208, 160, 160);
+}
+
+.heading {
+  color: rgb(106, 96, 104);
+  background-color: antiquewhite;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.items {
+  background-color: rgb(255, 244, 230);
 }
