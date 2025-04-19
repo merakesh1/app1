@@ -147,3 +147,20 @@ button:hover {
 .items {
   background-color: rgb(255, 244, 230);
 }
+
+button {
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgb(57, 31, 53);
+  border: 1px solid black;
+  cursor: pointer;
+  margin: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  width: 30%;
+}
+
+button:hover {
+  background-color: rgb(181, 139, 172);
+}

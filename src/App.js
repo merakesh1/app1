@@ -135,7 +135,7 @@ export default function App() {
 }
  */
 
-import reducer from "./Reducers/reducer2";
+/* import reducer from "./Reducers/reducer2";
 import { useReducer, useState } from "react";
 import './App.css'
 
@@ -201,5 +201,65 @@ export default function App() {
         </div>
       </div>
     </div>
+  );
+}
+ */
+
+/* import Component1 from "./classComponents/Component1";
+
+export default function App() {
+  return (
+    <>
+      <Component1 />
+    </>
+  );
+} */
+
+/* import Entities from "./classComponents/Entities";
+export default function App() {
+  return (
+    <>
+      <Entities name="table" madeof="wood" />
+      <Entities name="chair" madeof="plastic" />
+      <Entities name="bed" />
+    </>
+  )
+} */
+
+/* import Counter from "./classComponents/Counter";
+import "./App.css";
+export default function App() {
+  return (
+    <>
+      <Counter />
+    </>
+  );
+} */
+
+/* import Timer from "./classComponents/Timer";
+export default function App() {
+  return (
+    <>
+      <Timer />
+    </>
+  );
+} */
+/* 
+import Counter1 from "./classComponents/Counter1";
+import "./App.css";
+export default function App() {
+  return (
+    <>
+      <Counter1 />
+    </>
+  );
+} */
+
+import Timer1 from "./classComponents/Timer1";
+export default function App() {
+  return (
+    <>
+      <Timer1 />
+    </>
   );
 }
