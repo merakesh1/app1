@@ -255,11 +255,38 @@ export default function App() {
   );
 } */
 
-import Timer1 from "./classComponents/Timer1";
+/* import Timer1 from "./classComponents/Timer1";
 export default function App() {
   return (
     <>
       <Timer1 />
     </>
   );
+} */
+
+/* import Parent from "./classComponents/P1";
+import "./App.css"
+export default function App() {
+  return (
+    <Parent />
+  )
+} */
+
+/* import Greet from "./classComponents/Greet";
+export default function App() {
+  return (
+    <>
+      <h2>Welcome Back!</h2>
+      <Greet name="rohan" />
+      <Greet />
+    </>
+  )
+} */
+
+import TodoList from "./classComponents/Todos";
+import "./App.css"
+export default function App() {
+  return (
+    <TodoList />
+  )
 }
